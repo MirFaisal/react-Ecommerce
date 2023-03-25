@@ -1,0 +1,23 @@
+
+.nav {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  background: #1c2b35;
+}
+.nav .navbar {
+  display: flex;
+  justify-content: space-between;
+}
+.nav .navbar .navbar-nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav .navbar .navbar-nav .nav-item .nav-link {
+  color: #fff;
+}
+.nav .navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #ff9900;
+}

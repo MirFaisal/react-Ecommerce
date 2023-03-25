@@ -1,0 +1,50 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.row .left {
+  height: 323px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+}
+.row .left .offer-info {
+  color: #ff9900;
+}
+.row .left .text .hero-text {
+  margin-block-end: 10px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -0.015em;
+}
+.row .left .text p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 29px;
+  letter-spacing: 0.0025em;
+}
+.row .right {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row .right .image {
+  position: relative;
+}
+.row .right .image::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 20px;
+  width: 100%;
+  height: 633px;
+  background: #ffe0b3;
+  border-radius: 8px;
+  z-index: -1;
+}
