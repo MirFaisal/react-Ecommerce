@@ -1,0 +1,14 @@
+.shop-container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+.shop-container .products-wrapper {
+  padding-inline: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+.shop-container .order-summary {
+  height: 80vh;
+  background-color: #ffe0b3;
+}

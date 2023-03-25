@@ -1,0 +1,74 @@
+.card {
+  border: 1px rgba(131, 131, 131, 0.902) solid;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.card .product-img {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.product-img img {
+  width: 100%;
+}
+.card .product-info {
+  margin: 10px;
+}
+.card .product-info .product-name {
+  padding-block: 10px;
+  text-transform: lowercase;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 25px;
+  letter-spacing: 0.0015em;
+  color: #0e161a;
+}
+.card .product-info .product-price {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: 0.0015em;
+  color: #0e161a;
+}
+.card .brand-and-quality {
+  margin-block-start: 50px;
+  padding: 10px;
+}
+.card .brand-and-quality .manufacturer {
+  padding-block: 7px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.004em;
+}
+.card .brand-and-quality .rating {
+  padding-block: 7px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.004em;
+
+  color: #2a414f;
+}
+.card .btn-primary {
+  width: 100%;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.0125em;
+  color: #0e161a;
+  background: #ffe0b3;
+  border-top: 1px rgba(131, 131, 131, 0.902) solid;
+  border-radius: 0;
+}
