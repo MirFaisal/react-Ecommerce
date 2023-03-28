@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { addToDb, getShoppingCart } from "../../utilities/fakedb";
+import Cart from "../cart/Cart";
 import Product from "../product/Product";
 import "./Products.css";
 const Products = () => {
@@ -11,11 +13,39 @@ const Products = () => {
       .then((data) => setProducts(data));
   }, []);
 
-  const handelAddToCart = (product) => {
-    console.log(product);
-    const newCart = [...cart, product];
+  const handelAddToCart = (seletedProduct) => {
+    let newCart = [];
+    // if seletedProduct is not exists in cart. then the product quantity set 1
+    const exists = cart.find((product) => product.id === seletedProduct.id);
+    if (!exists) {
+      seletedProduct.quantity = 1;
+      newCart = [...cart, seletedProduct];
+    } else {
+      // if seletedproduct is exists in cart.than only clicked item quantity set to plus 1
+      const rest = cart.filter((product) => product.id != seletedProduct.id);
+      seletedProduct.quantity = seletedProduct.quantity + 1;
+      newCart = [...rest, seletedProduct];
+    }
     setCart(newCart);
+    addToDb(seletedProduct.id);
   };
+
+  useEffect(() => {
+    const storedCart = getShoppingCart();
+    // console.log(storedCart);
+    const processedCart = [];
+
+    for (const id in storedCart) {
+      const addedProducts = products.find((product) => product.id === id);
+      // console.log(addedProducts);
+      if (addedProducts) {
+        const quantity = storedCart[id];
+        addedProducts.quantity = quantity;
+        processedCart.push(addedProducts);
+      }
+    }
+    setCart(processedCart);
+  }, [products]);
   return (
     <div className="shop-container">
       <div className="products-wrapper">
@@ -28,14 +58,7 @@ const Products = () => {
         ))}
       </div>
       <div className="order-summary">
-        <h2>Order ummary</h2>
-        <div className="cart">
-          <p>Selected Items: {cart.length}</p>
-          <p>Total Price: {}</p>
-          <p>Total Shipping Charge: {}</p>
-          <p>Tax: {}</p>
-          <h3>Grand Total: {}</h3>
-        </div>
+        <Cart cart={cart}></Cart>
       </div>
     </div>
   );

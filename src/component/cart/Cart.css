@@ -1,0 +1,35 @@
+.shop-container .order-summary h2 {
+  text-align: center;
+  padding-block-start: 20px;
+}
+.shop-container .order-summary .cart {
+  padding-inline-start: 10px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.shop-container .order-summary .cart p {
+  width: 100%;
+  position: relative;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  color: rgb(65, 65, 65);
+  letter-spacing: 0.005em;
+}
+.shop-container .order-summary .cart h3 {
+  position: relative;
+}
+span {
+  position: absolute;
+  min-width: 50px;
+  padding-inline-end: 10px;
+  padding-block-end: 2px;
+  right: 0;
+  font-weight: 700;
+  text-align: end;
+  border-bottom: 4px solid red;
+}
